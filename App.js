@@ -1,5 +1,12 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button, TouchableHighlight } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Button,
+  TouchableHighlight,
+} from "react-native";
 
 //* Opcion 1: Imagenes locales
 // import icon from './assets/icon.png';
@@ -23,28 +30,35 @@ export default function App() {
       {/* En imágenes remotas, siempre hay que ponerle un widht y un height */}
       <Image
         source={{
-          uri: 'https://www.metacritic.com/a/img/catalog/provider/6/3/6-1-4763-13.jpg',
+          uri: "https://www.metacritic.com/a/img/catalog/provider/6/3/6-1-4763-13.jpg",
         }}
         style={{ width: 215, height: 294 }}
       />
 
       {/* Text es para colocar texto */}
-      <Text style={{ color: 'white' }}>Tenemos aquí la app</Text>
+      <Text style={{ color: "white" }}>Tenemos aquí la app</Text>
 
       {/* El Button cambia su estilo dependiendo de la plataforma */}
       {/* El onPress es como el onClick en React */}
       {/* Este Button no se puede estilar, porque es un componente nativo */}
       {/* Solo le puedes cambiar su color */}
-      <Button title='Pulsa aquí' onPress={() => alert('Hola')} />
+      <Button title="Pulsa aquí" onPress={() => alert("Hola")} />
 
       {/* Este botón si lo puedes estilar */}
       {/* Funciona más como ub botón en React */}
       <TouchableHighlight
         underlayColor={"#09f"}
-        onPress={() => alert('Hola')}
-        style={{width: 200, height: 200, backgroundColor: 'red', borderRadius: 100, justifyContent: 'center', alignItems: 'center'}}
+        onPress={() => alert("Hola")}
+        style={{
+          width: 200,
+          height: 200,
+          backgroundColor: "red",
+          borderRadius: 100,
+          justifyContent: "center",
+          alignItems: "center",
+        }}
       >
-        <Text style={{ color: 'white' }}>Pulsa aquí</Text>
+        <Text style={{ color: "white" }}>Pulsa aquí</Text>
       </TouchableHighlight>
     </View>
   );
@@ -53,8 +67,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#000",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
