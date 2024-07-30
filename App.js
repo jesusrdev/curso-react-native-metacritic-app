@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useState } from "react";
+import Constants from "expo-constants";
 import {
   StyleSheet,
   Text,
@@ -24,22 +25,16 @@ export default function App() {
       {/* Si yo coloco el fondo dark, entonces tengo que cambiar el style del StatusBar. Es un componente de Expo */}
       <StatusBar style="light" />
 
-      {/* SafeAreaView detecta el área de notificación */}
-      {/* Solo funciona en iOS */}
-      <SafeAreaView>
-        {/* ScrollView es para que el contenido se pueda desplazar */}
-        {/* ScrollView renderiza todos los elementos a la vez (no lazy function), por eso se le usa más en contenidos estáticos */}
-        <ScrollView>
-          {games.map((game) => (
-            <View key={game.slug} style={styles.card}>
-              <Image source={{ uri: game.image }} style={styles.image} />
-              <Text style={styles.title}>{game.title}</Text>
-              <Text style={styles.score}>{game.score}</Text>
-              <Text style={styles.description}>{game.description}</Text>
-            </View>
-          ))}
-        </ScrollView>
-      </SafeAreaView>
+      <ScrollView>
+        {games.map((game) => (
+          <View key={game.slug} style={styles.card}>
+            <Image source={{ uri: game.image }} style={styles.image} />
+            <Text style={styles.title}>{game.title}</Text>
+            <Text style={styles.score}>{game.score}</Text>
+            <Text style={styles.description}>{game.description}</Text>
+          </View>
+        ))}
+      </ScrollView>
     </View>
   );
 }
@@ -50,6 +45,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
     alignItems: "center",
     justifyContent: "center",
+    paddingTop: Constants.statusBarHeight,
+    padding: 12,
   },
 
   card: {
