@@ -2,6 +2,10 @@ import { Link } from "expo-router";
 import { Pressable, ScrollView, Text } from "react-native";
 import { HomeIcon } from "../components/Icons";
 
+import { styled } from "nativewind";
+
+const StyledPressable = styled(Pressable);
+
 export default function About() {
   return (
     <ScrollView className="pt-4">
@@ -12,8 +16,11 @@ export default function About() {
 
       {/* Si quiero pasarle un componente necesito usar la prop asChild */}
       <Link asChild href="/">
-        <Pressable>
+        {/* La otra manera de estilar los pressable es usando el styled de nativewind */}
+        <Pressable className="active:opacity-50">
           <HomeIcon />
+          {/* Con el pressed se pueden editar los estilos */}
+          {/* {({ pressed }) => <HomeIcon style={{ opacity: pressed ? 0.5 : 1 }} />} */}
         </Pressable>
       </Link>
 
