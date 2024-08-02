@@ -20,7 +20,7 @@ export function GameCard({ game }) {
       <StyledPressable className="active:opacity-70 border border-black active:border-white/50 mb-2 bg-gray-500/10 rounded-xl p-4">
         <View className="flex-row gap-4" key={game.slug}>
           <Image
-            className="w-[104px]"
+            className="w-[107px]"
             source={{ uri: game.image }}
             style={styles.image}
           />
