@@ -6,7 +6,7 @@ import { useLocalSearchParams } from "expo-router";
 export default function Detail() {
   const { id } = useLocalSearchParams();
   return (
-    <View className="flex-1 items-center justify-center">
+    <View className="flex-1 items-center justify-center bg-black">
       <View>
         <Text className="text-white font-bold mb-8 text-2xl">
           Detalle del juego {id}

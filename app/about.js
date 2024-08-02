@@ -8,7 +8,7 @@ const StyledPressable = styled(Pressable);
 
 export default function About() {
   return (
-    <ScrollView className="pt-4">
+    <ScrollView className="pt-4 bg-black">
       {/* Link normal solo se le puede pasar texto */}
       {/* <Link href="/" className="mt-24 text-xl text-blue-400">
         Ir al inicio
