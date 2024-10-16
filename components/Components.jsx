@@ -12,7 +12,7 @@ export function Score({ score, maxScore }) {
 
   return (
     <View
-      className={`${className} w-8 h-8 rounded-full justify-center items-center`}
+      className={`${className} w-8 h-8 rounded-full justify-center items-center my-3`}
     >
       <Text className="text-lg font-bold text-white">{score}</Text>
     </View>

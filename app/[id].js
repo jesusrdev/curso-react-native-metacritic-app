@@ -12,9 +12,9 @@ export default function Detail() {
 
   useEffect(() => {
     if (id) {
-      getGameDetails(id).then(setGameInfo(gameInfo));
+      getGameDetails(id).then((game) => setGameInfo(game));
     }
-  }, [id, gameInfo]);
+  }, [id]);
 
   return (
     <Screen>
@@ -25,7 +25,7 @@ export default function Detail() {
           },
           headerTintColor: "black",
           headerLeft: () => {},
-          headerTitle: "The legend of Zelda: Breath of the wild",
+          headerTitle: gameInfo ? gameInfo.title : "",
           headerRight: () => {},
         }}
       />
@@ -34,16 +34,16 @@ export default function Detail() {
           <ActivityIndicator size="large" color="#fff" />
         ) : (
           <ScrollView>
-            <View className="justify-center items-center text-center">
+            <View className="items-center justify-center text-center">
               <Image
-                className="w-[214px] h-[294px] rounded-[10px]"
-                source={{ uri: gameInfo.image }}
+                className="w-[214px] h-[294px] rounded-[10px] mb-2"
+                source={{ uri: gameInfo.img }}
               />
               <Score score={gameInfo.score} maxScore={100} />
-              <Text className="text-white font-bold mb-8 text-2xl">
+              <Text className="mb-4 text-2xl font-bold text-white">
                 {gameInfo.title}
               </Text>
-              <Text className="text-white/70 mt-4 text-left mb-8">
+              <Text className="mb-8 text-left text-white/70">
                 {gameInfo.description}
               </Text>
             </View>
